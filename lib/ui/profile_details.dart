@@ -22,6 +22,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
         _listTile("Phone No", profile.phoneNumber),
         _listTile("Location", profile.location),
       ]),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: _editFabBtn(),
     );
   }
@@ -29,18 +30,21 @@ class _ProfileDetailsState extends State<ProfileDetails> {
   _listTile(String head, String? end) => ListTile(title: Text("$head: ${end ?? 'Empty'}"));
 
   _editFabBtn() {
-    return FloatingActionButton(
-        onPressed: () async {
-          await Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const EditProfilePage(),
-            ),
-          );
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 50),
+      child: FloatingActionButton(
+          onPressed: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const EditProfilePage(),
+              ),
+            );
 
-          setState(() {});
-        },
-        child: const Icon(Icons.edit));
+            setState(() {});
+          },
+          child: const Icon(Icons.edit)),
+    );
   }
 }
 

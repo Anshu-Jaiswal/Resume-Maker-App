@@ -109,8 +109,11 @@ class _EditSkillSetState extends State<EditSkillSet> {
                   }
                   return null;
                 }),
-            Spacer(),
-            ElevatedButton(onPressed: _onSave, child: Text("Ok"))
+            Spacer(
+              flex: 2,
+            ),
+            ElevatedButton(onPressed: _onSave, child: Text("Ok")),
+            Spacer()
           ],
         ),
       ),

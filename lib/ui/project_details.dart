@@ -149,8 +149,11 @@ class _EditProjectState extends State<EditProject> {
                   controller: _linkCtr,
                   decoration: InputDecoration(labelText: "Link"),
                 ),
+                Spacer(
+                  flex: 2,
+                ),
+                ElevatedButton(onPressed: _onSave, child: Text("Save")),
                 Spacer(),
-                ElevatedButton(onPressed: _onSave, child: Text("Save"))
               ],
             ),
           ),

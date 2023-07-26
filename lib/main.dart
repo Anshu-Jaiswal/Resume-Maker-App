@@ -45,6 +45,7 @@ class PdfMaker extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         icon: const Icon(Icons.arrow_right),
         onPressed: () => _templateSelectPageNav(context),

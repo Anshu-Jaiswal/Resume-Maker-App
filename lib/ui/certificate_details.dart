@@ -108,8 +108,11 @@ class _EditCertificateState extends State<EditCertificate> {
                 return null;
               },
             ),
+            const Spacer(
+              flex: 2,
+            ),
+            ElevatedButton(onPressed: _onSave, child: const Text("Save")),
             const Spacer(),
-            ElevatedButton(onPressed: _onSave, child: const Text("Save"))
           ],
         ),
       ),

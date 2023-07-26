@@ -23,9 +23,12 @@ class AppPageView extends StatelessWidget {
         onPressed: () async {
           String filePath = '/storage/emulated/0/Download/resume.pdf';
           File file = File(filePath);
-          await file.create();
-          // await file.writeAsBytes(await pdf.save());
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Saved in Downloads")));
+          try {
+            await file.writeAsBytes(await pdf.save());
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Saved in Downloads")));
+          } catch (e) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: ${e.toString()}")));
+          }
         },
       ),
     );
